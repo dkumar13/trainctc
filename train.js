@@ -87,7 +87,7 @@ myApp.controller("addevent", function($scope,$timeout){
 const allstyle = ()=>{
     
     document.getElementById("pagdat").style.marginTop="0px";
-	document.getElementById("getval").style.marginLef="85px";
+	document.getElementById("getval").style.marginLeft="85px";
     document.getElementById("pnrchart").style.display="block";
     document.getElementById("jrnif").style.display="block";
     document.getElementById("displcss").style.display="block";
