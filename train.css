@@ -94,6 +94,7 @@ li a{
     display:flex;
     margin:auto;
     flex:1;
+	margin-top:125px;
 }
 
 .trndtl{
