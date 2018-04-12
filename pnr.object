@@ -1,0 +1,30 @@
+boarding_point:{name: "HOWRAH JN", lat: 22.5882216, code: "HWH", lng: 88.323139},
+chart_prepared:false,
+debit:3,
+doj:"08-05-2018",
+
+from_station:{name: "HOWRAH JN", lat: 22.5882216, code: "HWH", lng: 88.323139},
+journey_class:{name: null, code: "3A"},
+
+
+passengers:[
+{booking_status: "CNF/B2/19/GN", current_status: "CNF/-/0/GN", no: 1, $$hashKey: "object:6"},
+{booking_status: "CNF/B2/22/GN", current_status: "CNF/-/0/GN", no: 2, $$hashKey: "object:7"},
+{booking_status: "CNF/B2/21/GN", current_status: "CNF/-/0/GN", no: 3, $$hashKey: "object:8"},
+{booking_status: "CNF/B2/25/GN", current_status: "CNF/-/0/GN", no: 4, $$hashKey: "object:9"},
+{booking_status: "CNF/B2/24/GN", current_status: "CNF/-/0/GN", no: 5, $$hashKey: "object:10"}],
+
+
+
+reservation_upto:{name: "GAYA JN", lat: 24.7964355, code: "GAYA", lng: 85.0079563},
+response_code:200,
+to_station:{name: "GAYA JN", lat: 24.7964355, code: "GAYA", lng: 85.0079563},
+total_passengers:5,
+
+train:{name: "DOON EXPRESS", number: "13009"}
+
+train{
+name:"DOON EXPRESS"
+number:"13009"}
+
+

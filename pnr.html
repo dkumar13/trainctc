@@ -1,0 +1,54 @@
+<input type="search" id="getval" class="getsearch" placeholder="Enter Pnr No ....">
+<input type="button" value="Submit" ng-click="getpnr()" id="postsub">
+<div id="pnrchart" class="pnrsta">
+<div id="jrnif">
+    <table>
+        <tr>
+            <th colspan="4">Journey Details</th>
+
+        </tr>
+        <tr>
+            <th>Train No</th>
+            <th>Train No</th>
+            <th>Broading date(DD-MM-YYYY)</th>
+            <th>Class</th>
+        </tr>
+        <tr>
+            <td>{{data.train.number}}</td>
+            <td>{{data.train.name}}</td>
+            <td>{{data.doj}}</td>
+            <td>{{data.journey_class.code}}</td>
+        </tr>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Reserved Upto</th>
+            <th>Broading Point</th>
+        </tr>
+        <tr>
+            <td>{{data.from_station.name}}</td>
+            <td>{{data.to_station.name}}</td>
+            <td>{{data.boarding_point.name}}</td>
+            <td>{{data.reservation_upto.name}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="displcss">
+    <table>
+        <tr>
+            <th>Sl No</th>
+            <th>Booking Status</th>
+            <th>Current Status</th>
+        </tr>
+        <tr ng-repeat="datas in data.passengers">
+            <td>{{datas.no}}</td>
+            <td>{{datas.booking_status}}</td>
+            <td>{{datas.current_status}}</td>
+ 
+        </tr>
+    </table>
+</div>
+
+</div>
