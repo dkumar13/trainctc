@@ -83,7 +83,7 @@ li a{
 /* Section part Coding start */
 .row2{
 
-    flex: 4;
+    flex: 6;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -264,3 +264,51 @@ table{
 
 
 
+/* Live Tarin Css Code Start */
+
+
+table,th,td,tr{
+    border:2px solid #595157;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+#gettn {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 154px;
+    margin-bottom: 20px;
+}
+#getdat {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+}
+#postsub {
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+}
+
+#lvstatus{
+    margin-bottom:20px;
+}
+
+#data{
+    display: none;
+}
+/* Live Tarin Css Code Start */

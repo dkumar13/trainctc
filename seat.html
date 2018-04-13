@@ -1,120 +1,64 @@
-<!DOCTYPE html>
-<html>
+<input type="search" id="gettn" class="getsearch" placeholder="Enter Train No ">
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<input type="search" id="getdat" class="getsearch" placeholder="Enter Date dd-mm-yyyy">
+<input type="button" value="Submit" id="postsub" ng-click="trnno()">
 
-    <script src="./angular.js"></script>
-</head>
+<div id="data">
 
-<body ng-app="myModule" ng-controller="myController">
-    <input type="search" id="getval" class="getsearch" placeholder="Enter Train No ">
-    <input type="search" id="getdat" class="getsearch" placeholder="Enter Date dd-mm-yyyy">
-    <input type="button" value="Submit" ng-click="getpnr()">
+    <div id="lvstatus">
 
-    {{trn_sts.train.route[getroutelength-1].status}}
+        <table>
+            <tr>
+                <th colspan="4"> Live Train Status</td>
+            </tr>
+            <tr>
+                <th>Train Name</th>
+                <th>Train No</th>
+                <th>Start Date</th>
+                <th>Current station</th>
+            </tr>
+            <tr>
+                <td>{{data.train.name}}</td>
+                <td>{{data.train.number}}</td>
+                <td>{{data.start_date}}</td>
+                <td>{{data.current_station.name}}({{data.current_station.code}})</td>
+            </tr>
+            <tr>
+                <th colspan="4">Train position</th>
+            </tr>
+            <tr>
+                <td colspan="4">{{data.position}}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="paststatus">
+        <table>
+            <tr>
+                <th colspan="9">Train Running History</th>
+            </tr>
+            <tr>
+                <th>Station</th>
+                <th>Schedule Arrival</th>
+                <th>Schedule Arrival Date</th>
+                <th>Actual Arival</th>
+                <th>Actual Arrival Date</th>
+                <th>Schedule Departure</th>
+                <th>Actual Departure</th>
+                <th>Late</th>
+                <th>Distain</th>
+            </tr>
+            <tr ng-repeat="data in data.route">
+                <td>{{data.station.name}}</td>
+                <td>{{data.scharr}}</td>
+                <td>{{data.scharr_date}}</td>
+                <td>{{data.actarr}}</td>
+                <td>{{data.actarr_date}}</td>
+                <td>{{data.schdep}}</td>
+                <td>{{data.actdep}}</td>
+                <td>{{data.status}}</td>
+                <td>{{data.distance}}</td>
 
-    <script>
-
-        var myApp = angular.module("myModule", []);
-        myApp.controller("myController", function ($scope, $http) {
-
-            $scope.getpnr = function () {
-
-                var pnr = document.getElementById("getval");
-                var dte = document.getElementById("getdat");
-                //alert("PNR Value = " + pnr.value)
-                if (pnr != "undefined" || pnr != "null") {
-
-                    $http({
-                        method: "GET",
-                        url: "https://api.railwayapi.com/v2/live/train/" + pnr.value + "/date/" + dte.value + "/apikey/2afh9rxhwo/"
-                    }).then(
-                        function (response) {
-                            $scope.data = response.data;
-                            console.log($scope.data)
-                            //console.log($scope.data.passengers[0])
-                            //alert(pnr)
-                            // document.getElementById("displcss").style.display = "block";
-                            //$digest
-                        },
-                        function (response) {
-                            $scope.status = response.status;
-                            console.log($scope.status)
-                        });
-                }
-            }
-
-        
-
-
-
-
-
-        let trn_sts = {            
-current_station: {
-                code: "CBJ",
-                lat: 28.3965955,
-                lng: 79.3716347,
-                name: "CLUTTERBUCKGANJ",
-            },
-            position: "Train passed by CLUTTERBUCKGANJ(CBJ) and late by 478 minutes.",
-            start_date: "11 Apr 2018",
-            train: {
-                number: "12392",
-                name: "SHRAMJEEVI EXPRESS",
-                classes: [
-                    { code: "SL", name: "SLEEPER CLASS", available: "Y" },
-                    { code: "3A", name: "THIRD AC", available: "Y" },
-                    { code: "1A", name: "FIRST AC", available: "Y" },
-                    { code: "3E", name: "3rd AC ECONOMY", available: "N" },
-                    { code: "FC", name: "FIRST CLASS", available: "N" },
-                    { code: "2A", name: "SECOND AC", available: "Y" },
-                    { code: "2S", name: "SECOND SEATING", available: "N" },
-                    { code: "CC", name: "AC CHAIR CAR", available: "N" }
-                ],
-                days: [
-                    { code: "MON", runs: "Y" },
-                    { code: "TUE", runs: "Y" },
-                    { code: "WED", runs: "Y" },
-                    { code: "THU", runs: "Y" },
-                    { code: "FRI", runs: "Y" },
-                    { code: "SAT", runs: "Y" },
-                    { code: "SUN", runs: "Y" }
-                ],
-
-                route: [
-                    {                        
-actarr: "15:51", actarr_date: "12 Apr 2018", actdep: "00:00", day: 1, distance: 1103, has_arrived: false,
-                        has_departed: false, latemin: 341, scharr: "10:10", scharr_date: "12 Apr 2018", schdep: "Destination",
-                        station: { code: "RGD", lng: 85.4199, name: "RAJGIR", lat: 25.0306 }, status: "341 mins late"
-                    },
-
-                    {
-                        actarr: "15:51", actarr_date: "12 Apr 2018", actdep: "00:00", day: 1, distance: 1103, has_arrived: false,
-                        has_departed: false, latemin: 341, scharr: "10:10", scharr_date: "12 Apr 2018", schdep: "Destination",
-                        station: { code: "RGD", lng: 85.4199, name: "RAJGIR", lat: 25.0306 }, status: "341 mins late"
-                    },
-
-                    {                        
-actarr: "15:51", actarr_date: "12 Apr 2018", actdep: "00:00", day: 1, distance: 1103, has_arrived: false,
-                        has_departed: false, latemin: 341, scharr: "10:10", scharr_date: "12 Apr 2018", schdep: "Destination",
-                        station: { code: "RGD", lng: 85.4199, name: "RAJGIR", lat: 25.0306 }, status: "341 mins late"
-                    },
-                ]
-            }
-        }
-        let getroutelength  = trn_sts.train.route.length;
-        $scope.trn_sts = trn_sts;
-        $scope.getroutelength = getroutelength; 
-        
-    console.log(trn_sts.train.route[getroutelength-1].status)
-
-    })
-    </script>
-</body>
-
-</html>
+            </tr>
+        </table>
+    </div>
+</div>

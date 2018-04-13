@@ -19,12 +19,12 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a ng-href="#!"> Home </a></li>
-                        <li><a ng-href="#">Live Train Status</a></li>
-                        <li><a ng-href="#!pnr">PNR Status</a></li>
-                        <li><a ng-href="#">Seat Avaliabilty</a></li>
-                        <li><a ng-href="#">Train Fair Enquiry</a></li>
-                        <li><a ng-href="#">Train Arrival</a></li>
+                        <li><a ng-href="#!" ng-click="checkcss()"> Home </a></li>
+                        <li><a ng-href="#!seat" ng-click="checkcss()">Live Train Status</a></li>
+                        <li><a ng-href="#!pnr" ng-click="checkcss()">PNR Status</a></li>
+                        <li><a ng-href="#" ng-click="checkcss()">Seat Avaliabilty</a></li>
+                        <li><a ng-href="#" ng-click="checkcss()">Train Fair Enquiry</a></li>
+                        <li><a ng-href="#" ng-click="checkcss()">Train Arrival</a></li>
                     </ul>
                 </nav>
             </header>
@@ -36,13 +36,13 @@
         </div>
         </div>
 
-        <div class="row3" id="footer">
+       <!-- <div class="row3" id="footer">
             <footer>
                 
             </footer>
 
          </div>
-        <!--
+        
         <input type="search" id="getval" class="getsearch">
         <input type="button" value="Submit" ng-click="getpnr()">
         <div id="displcss">
