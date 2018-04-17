@@ -312,3 +312,55 @@ table{
     display: none;
 }
 /* Live Tarin Css Code Start */
+
+/* Train Info css start */
+
+#gettnnm{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    
+}
+#maindiv table,tr,th,td{
+    border:2px solid #595157;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+}
+#maindiv table{
+    border-collapse: collapse;
+    
+}
+#maindiv{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    
+}
+.rws{
+    flex:1;
+    display:flex;
+    margin:auto;
+    width: 100%;
+}
+.rws1{
+    flex:1;
+    display:flex;
+    margin:auto;
+    width: 100%;
+}
+.row1s{
+    width: 100%;
+}
+
+.row3s{
+    height: 173px;
+}
+
+
+/* Train Info css End */

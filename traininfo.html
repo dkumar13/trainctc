@@ -1,0 +1,52 @@
+<input type="search" id="gettnnm" class="getsearch" placeholder="Enter Train no ....">
+<input type="button" value="Submit" ng-click="getdetl()" id="postsub">
+{{tains.name}}
+
+<div id="maindiv">
+<div class="rws">
+<table class="row1s">
+    <tr>
+        <th colspan="8">Train Details</th>
+    </tr>
+    <tr>
+        <th colspan="4">Train Name</th>
+        <th colspan="4">Train No</th>
+    </tr>
+    <tr>
+        <td colspan="4">{{data.train.name}}</td>
+        <td colspan="4">{{data.train.number}}</td>
+    </tr>
+    </table>
+    </div>
+    <div class="rws1">
+    <table class="row2s" >
+    <tr>
+        <th>Train Class</th>
+        <th>Available</th>
+
+    </tr>
+
+    <tr ng-repeat="datas in data.train.classes">
+
+        <td>{{datas.name}}({{datas.code}})</td>
+        <td>{{datas.available|classess}}</td>
+
+    </tr>
+    </table>
+    <table class="row3s">
+    <tr >
+        <th>Days</th>
+        <th>Train Run(Y/N)</th>
+
+    </tr>
+
+    <tr ng-repeat="data in data.train.days">
+
+        <td>{{data.code}}</td>
+        <td>{{data.runs|dayss}}</td>
+
+    </tr>
+ 
+</table>
+</div>
+</div>
