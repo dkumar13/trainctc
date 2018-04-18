@@ -62,6 +62,34 @@ myApp.controller("myController", function ($scope, $http) {
         }
     }
 
+    $scope.getdetl  = function(){
+        var trnsd = document.getElementById("gettnnm");
+        //var dte = document.getElementById("getdat");
+        //alert("PNR Value = " + pnr.value)
+        if (trnsd != "undefined" || trnsd != "null") {
+            
+            $http({
+                method: "GET",
+                url: "https://api.railwayapi.com/v2/name-number/train/"+trnsd.value+"/apikey/2afh9rxhwo/"
+            }).then(
+                function (response) {
+                    $scope.data = response.data;
+                    console.log($scope.data)
+                    console.log($scope.data.train.name)
+                    //console.log($scope.data.passengers[0])
+                    //alert(pnr)
+                    // document.getElementById("displcss").style.display = "block";
+                    //$digest
+                    cssprop();
+                },
+                function (response) {
+                    $scope.status = response.status;
+                    console.log($scope.status)
+                });
+                
+        }
+            }
+
     $scope.checkcss = function (){
 
         document.getElementById("pagdat").style.marginTop = "125px";
@@ -165,40 +193,13 @@ myApp.filter("dayss", function(){
         }
     }
 })
-    myApp.controller("myController",function($scope, $http){
+    
 
 
 
-        $scope.getdetl  = function(){
-    var trnsd = document.getElementById("gettnnm");
-    //var dte = document.getElementById("getdat");
-    //alert("PNR Value = " + pnr.value)
-    if (trnsd != "undefined" || trnsd != "null") {
-        
-        $http({
-            method: "GET",
-            url: "https://api.railwayapi.com/v2/name-number/train/"+trnsd.value+"/apikey/2afh9rxhwo/"
-        }).then(
-            function (response) {
-                $scope.data = response.data;
-                console.log($scope.data)
-                console.log($scope.data.train.name)
-                //console.log($scope.data.passengers[0])
-                //alert(pnr)
-                // document.getElementById("displcss").style.display = "block";
-                //$digest
-                cssprop();
-            },
-            function (response) {
-                $scope.status = response.status;
-                console.log($scope.status)
-            });
-            
-    }
-        }
 
 
-    })
+
 
 const allstyle = () => {
 
