@@ -1,0 +1,59 @@
+.getsearches{
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: 54px;
+    margin-bottom: 8px;
+}
+
+#senddet table,tr,td,th {
+    border:none;
+}
+
+#senddetlsd table,tr,td,th {
+    border:none;
+}
+
+#setdel  table,#setdel tr,#setdel th,#setdel td{
+    border:2px solid #595157;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+}
+#setdel  table{
+    border-collapse: collapse;
+    
+}
+
+#fares  table,#fares tr,#fares th,#fares td{
+    border:2px solid #595157;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+
+}
+#fares  table{
+    border-collapse: collapse;
+    
+}
+
+#postsubs{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    margin-top: -8px;
+}
+
+#postsubd{
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    margin-left: 234px;
+}

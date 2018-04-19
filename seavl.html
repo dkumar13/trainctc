@@ -1,0 +1,67 @@
+<div id="senddetlsd">
+    <table>
+        <tr>
+            <td>
+                <input type="search" id="getnnm" class="getsearches" placeholder="Enter Train No ....">
+            </td>
+            <td>
+                <input type="search" id="getnnm1" class="getsearches" placeholder="Enter Station Code ....">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="search" id="getnnm2" class="getsearches" placeholder="Dest Station Code ....">
+            </td>
+            <td>
+                <input type="search" id="getnnm4" class="getsearches" placeholder="Enter class ....">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="search" id="getnnm5" class="getsearches" placeholder="Enter quoto ....">
+            </td>
+            <td>
+                <input type="search" id="getnnm6" class="getsearches" placeholder="dd-mm-yyyy">
+            </td>
+        </tr>
+
+                
+
+    </table>
+</div>
+<input type="button" value="Submit" ng-click="getsetde()" id="postsubd">
+
+<div id="setdel">
+    <table>
+        <tr>
+            <th colspan="6">
+                Train Seat Availability Details
+            </th>
+        </tr>
+        <tr>
+            <th>Train Name</th>
+            <th>Train No</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Quota</th>
+            <th>Class</th>
+        </tr>
+        <tr>
+            <td>{{data.train.name}}</td>
+            <td>{{data.train.number}}</td>
+            <td>{{data.from_station.name}}({{data.from_station.code}})</td>
+            <td>{{data.to_station.name}}({{data.to_station.code}})</td>
+            <td>{{data.journey_class.name}}({{data.journey_class.code}})</td>
+            <td>{{data.quota.name}}({{data.quota.code}})</td>
+        </tr>
+        <tr>
+            <th colspan="3">Seat Availability</th>
+            <th colspan="3">Date</th>
+        </tr>
+        <tr ng-repeat=" datas in data.availability">
+            <td colspan="3">{{datas.status}}</td>
+            <td colspan="3">{{datas.date}}</td>
+
+        </tr>
+    </table>
+</div>

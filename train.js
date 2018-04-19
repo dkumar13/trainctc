@@ -41,7 +41,7 @@ myApp.controller("myController", function ($scope, $http) {
         var dte = document.getElementById("getdat");
         //alert("PNR Value = " + pnr.value)
         if (pnr != "undefined" || pnr != "null") {
-            
+
             $http({
                 method: "GET",
                 url: "https://api.railwayapi.com/v2/live/train/" + pnr.value + "/date/" + dte.value + "/apikey/2afh9rxhwo/"
@@ -58,19 +58,19 @@ myApp.controller("myController", function ($scope, $http) {
                     $scope.status = response.status;
                     console.log($scope.status)
                 });
-                seatavcss();
+            seatavcss();
         }
     }
 
-    $scope.getdetl  = function(){
+    $scope.getdetl = function () {
         var trnsd = document.getElementById("gettnnm");
         //var dte = document.getElementById("getdat");
         //alert("PNR Value = " + pnr.value)
         if (trnsd != "undefined" || trnsd != "null") {
-            
+
             $http({
                 method: "GET",
-                url: "https://api.railwayapi.com/v2/name-number/train/"+trnsd.value+"/apikey/2afh9rxhwo/"
+                url: "https://api.railwayapi.com/v2/name-number/train/" + trnsd.value + "/apikey/2afh9rxhwo/"
             }).then(
                 function (response) {
                     $scope.data = response.data;
@@ -86,11 +86,82 @@ myApp.controller("myController", function ($scope, $http) {
                     $scope.status = response.status;
                     console.log($scope.status)
                 });
-                
-        }
-            }
 
-    $scope.checkcss = function (){
+        }
+    }
+
+    $scope.getsetde = function () {
+        var trnsd = document.getElementById("getnnm");
+        var trnsd1 = document.getElementById("getnnm1");
+        var trnsd2 = document.getElementById("getnnm2");
+        var trnsd4 = document.getElementById("getnnm4");
+        var trnsd5 = document.getElementById("getnnm5");
+        var trnsd6 = document.getElementById("getnnm6");
+
+
+
+
+
+        if (trnsd != "undefined" || trnsd != "null") {
+
+            $http({
+                method: "GET",
+                url: "https://api.railwayapi.com/v2/check-seat/train/" + trnsd.value + "/source/" + trnsd1.value + "/dest/" + trnsd2.value + "/date/" + trnsd6.value + "/pref/" + trnsd4.value + "/quota/" + trnsd5.value + "/apikey/2afh9rxhwo/"
+            }).then(
+                function (response) {
+                    $scope.data = response.data;
+                    console.log($scope.data)
+                    // console.log($scope.data.train.name)
+                    //console.log($scope.data.passengers[0])
+                    //alert(pnr)
+                    // document.getElementById("displcss").style.display = "block";
+                    //$digest
+                },
+                function (response) {
+                    $scope.status = response.status;
+                    console.log($scope.status)
+                });
+
+        }
+    }
+
+    $scope.getfairs = function () {
+        var trnsd = document.getElementById("gettnnms");
+        var trnsd1 = document.getElementById("gettnnms1");
+        var trnsd2 = document.getElementById("gettnnms2");
+        var trnsd3 = document.getElementById("gettnnms3");
+        var trnsd4 = document.getElementById("gettnnms4");
+        var trnsd5 = document.getElementById("gettnnms5");
+        var trnsd6 = document.getElementById("gettnnms6");
+
+
+
+
+
+        if (trnsd != "undefined" || trnsd != "null") {
+
+            $http({
+                method: "GET",
+                url: "https://api.railwayapi.com/v2/fare/train/" + trnsd.value + "/source/" + trnsd1.value + "/dest/" + trnsd2.value + "/age/" + trnsd6.value + "/pref/" + trnsd3.value + "/quota/" + trnsd4.value + "/date/" + trnsd5.value + "/apikey/2afh9rxhwo/"
+            }).then(
+                function (response) {
+                    $scope.data = response.data;
+                    console.log($scope.data)
+                    // console.log($scope.data.train.name)
+                    //console.log($scope.data.passengers[0])
+                    //alert(pnr)
+                    // document.getElementById("displcss").style.display = "block";
+                    //$digest
+                },
+                function (response) {
+                    $scope.status = response.status;
+                    console.log($scope.status)
+                });
+
+        }
+    }
+
+    $scope.checkcss = function () {
 
         document.getElementById("pagdat").style.marginTop = "125px";
 
@@ -139,6 +210,16 @@ myApp.config(function ($routeProvider) {
             controller: "myController"
 
         })
+        .when("/fare", {
+            templateUrl: "fare.html",
+            controller: "myController"
+
+        })
+        .when("/seatavl", {
+            templateUrl: "seavl.html",
+            controller: "myController"
+
+        })
         .otherwise({
             templateUrl: "main.html"
         })
@@ -160,40 +241,40 @@ myApp.controller("addevent", function ($scope, $timeout) {
     }
 
 })
-myApp.filter("dayss", function(){
-    return function(input){
-        switch(input){
+myApp.filter("dayss", function () {
+    return function (input) {
+        switch (input) {
             case "Y":
-            return "Running";
-            break;
+                return "Running";
+                break;
 
             case "N":
-            return "Not Running";
-            break;
-            
+                return "Not Running";
+                break;
+
             default:
-            return "Wrong Data";
+                return "Wrong Data";
         }
     }
 })
 
-    myApp.filter("classess", function(){
-    return function(input){
-        switch(input){
+myApp.filter("classess", function () {
+    return function (input) {
+        switch (input) {
             case "Y":
-            return "Available";
-            break;
+                return "Available";
+                break;
 
             case "N":
-            return "Not Available";
-            break;
-            
+                return "Not Available";
+                break;
+
             default:
-            return "Wrong Data";
+                return "Wrong Data";
         }
     }
 })
-    
+
 
 
 
@@ -210,18 +291,18 @@ const allstyle = () => {
     document.getElementById("displcss").style.display = "block";
 }
 
-const seatavcss = () =>{
+const seatavcss = () => {
 
     document.getElementById("data").style.display = "block";
     document.getElementById("pagdat").style.marginTop = "0px";
     document.getElementById("gettn").style.marginLeft = "221px";
 }
 
-const cssprop = () =>{
+const cssprop = () => {
 
-    document.getElementById("maindiv").style.display = "flex"; 
+    document.getElementById("maindiv").style.display = "flex";
     document.getElementById("pagdat").style.marginTop = "0px";
     document.getElementById("gettnnm").style.marginLeft = "148px";
     document.getElementById("gettnnm").style.marginBottom = "15px";
-      
+
 }

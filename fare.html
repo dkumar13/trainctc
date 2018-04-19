@@ -1,0 +1,70 @@
+<div id="senddet">
+
+    <table>
+        <tr>
+            <td>
+                <input type="search" id="gettnnms" class="getsearches" placeholder="Enter Train No ....">
+            </td>
+            <td>
+                <input type="search" id="gettnnms1" class="getsearches" placeholder="Enter Station Code ....">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="search" id="gettnnms2" class="getsearches" placeholder="Dest Station Code ....">
+            </td>
+            <td>
+                <input type="search" id="gettnnms3" class="getsearches" placeholder="Enter class ....">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="search" id="gettnnms4" class="getsearches" placeholder="Enter quoto ....">
+            </td>
+            <td>
+                <input type="search" id="gettnnms5" class="getsearches" placeholder="dd-mm-yyyy">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="search" id="gettnnms6" class="getsearches" placeholder="Enter Age ....">
+            </td>
+            <td>
+                <input type="button" value="Submit" ng-click="getfairs()" id="postsubs">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="fares">
+    <table>
+        <tr>
+            <th colspan="4">
+                Train Fair Details
+            </th>
+        </tr>
+        <tr>
+            <th>Train Name</th>
+            <th>Train No</th>
+            <th>Source</th>
+            <th>Destination</th>
+        </tr>
+        <tr>
+            <td>{{data.train.name}}</td>
+            <td>{{data.train.number}}</td>
+            <td>{{data.from_station.name}}{{data.from_station.code}}</td>
+            <td>{{data.to_station.name}}{{data.to_station.code}}</td>
+        </tr>
+        <tr>
+
+            <th colspan="2">Class</th>
+            <th>Quota</th>
+            <th>Fair</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{data.journey_class.name}}({{data.journey_class.code}})</td>
+            <td>{{data.quota.name}}({{data.quota.code}})</td>
+            <td>{{data.fare|currency:"&#8377;"}}</td>
+        </tr>
+    </table>
+</div>
