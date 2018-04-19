@@ -123,6 +123,7 @@ myApp.controller("myController", function ($scope, $http) {
                 });
 
         }
+        seatsc();
     }
 
     $scope.getfairs = function () {
@@ -159,6 +160,7 @@ myApp.controller("myController", function ($scope, $http) {
                 });
 
         }
+        fairsc();
     }
 
     $scope.checkcss = function () {
@@ -305,4 +307,18 @@ const cssprop = () => {
     document.getElementById("gettnnm").style.marginLeft = "148px";
     document.getElementById("gettnnm").style.marginBottom = "15px";
 
+}
+
+
+const seatsc = () => {
+    document.getElementById("pagdat").style.marginTop = "0px";
+    document.getElementById("senddetlsd").style.marginLeft = "198px";
+    document.getElementById("senddetlsd").style.width = "410px";
+    document.getElementById("postsubd").style.marginLeft = "364px";
+    document.getElementById("setdel").style.display = "flex";
+}
+
+const fairsc = () => {
+    document.getElementById("pagdat").style.marginTop = "0px";
+    document.getElementById("fares").style.display = "flex";
 }

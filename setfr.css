@@ -4,7 +4,7 @@
     border: none;
     border-radius: 50px;
     text-align: center;
-    margin-left: 54px;
+    margin-left: 7px;
     margin-bottom: 8px;
 }
 
@@ -29,6 +29,11 @@
     
 }
 
+#setdel{
+    margin-top:10px;
+    display:none;
+}
+
 #fares  table,#fares tr,#fares th,#fares td{
     border:2px solid #595157;
     color:white;
@@ -40,6 +45,11 @@
 #fares  table{
     border-collapse: collapse;
     
+}
+
+#fares{
+    margin-top:10px;
+    display:none;
 }
 
 #postsubs{
@@ -55,5 +65,5 @@
     height: 30px;
     border: none;
     border-radius: 50px;
-    margin-left: 234px;
+    margin-left: 168px;
 }
